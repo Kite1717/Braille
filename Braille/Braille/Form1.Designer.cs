@@ -43,10 +43,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dörtİşlemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.çeviriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FourOperationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ConverterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -206,29 +206,30 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             // 
-            // dörtİşlemToolStripMenuItem
+            // FourOperationsToolStripMenuItem
             // 
-            this.dörtİşlemToolStripMenuItem.Name = "dörtİşlemToolStripMenuItem";
-            this.dörtİşlemToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
-            this.dörtİşlemToolStripMenuItem.Text = "Four Operations";
+            this.FourOperationsToolStripMenuItem.Name = "FourOperationsToolStripMenuItem";
+            this.FourOperationsToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.FourOperationsToolStripMenuItem.Text = "Four Operations";
             // 
-            // çıkışToolStripMenuItem
+            // ExitToolStripMenuItem
             // 
-            this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
-            this.çıkışToolStripMenuItem.Text = "Exit";
+            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
+            this.ExitToolStripMenuItem.Text = "Exit";
             // 
-            // hakkındaToolStripMenuItem
+            // AboutToolStripMenuItem
             // 
-            this.hakkındaToolStripMenuItem.Name = "hakkındaToolStripMenuItem";
-            this.hakkındaToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.hakkındaToolStripMenuItem.Text = "About";
+            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.AboutToolStripMenuItem.Text = "About";
+            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-            // çeviriToolStripMenuItem
+            // ConverterToolStripMenuItem
             // 
-            this.çeviriToolStripMenuItem.Name = "çeviriToolStripMenuItem";
-            this.çeviriToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
-            this.çeviriToolStripMenuItem.Text = "Converter";
+            this.ConverterToolStripMenuItem.Name = "ConverterToolStripMenuItem";
+            this.ConverterToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.ConverterToolStripMenuItem.Text = "Converter";
             // 
             // textBox1
             // 
@@ -254,10 +255,10 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.çeviriToolStripMenuItem,
-            this.hakkındaToolStripMenuItem,
-            this.çıkışToolStripMenuItem,
-            this.dörtİşlemToolStripMenuItem});
+            this.ConverterToolStripMenuItem,
+            this.AboutToolStripMenuItem,
+            this.ExitToolStripMenuItem,
+            this.FourOperationsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -288,7 +289,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "EDITOR";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -313,10 +314,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem dörtİşlemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem çıkışToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hakkındaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem çeviriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FourOperationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ConverterToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MenuStrip menuStrip1;

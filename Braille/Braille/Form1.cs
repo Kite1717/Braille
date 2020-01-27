@@ -90,14 +90,14 @@ namespace Braille
             this.Close();
             Application.Exit();
         }
-
+        #endregion
 
         /// <summary>
         /// translates the text in the braille alphabet equivalent
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        #endregion
+
         private void button1_Click(object sender, EventArgs e)
         {
             bool startDigit = false;

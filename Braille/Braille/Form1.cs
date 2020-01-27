@@ -83,6 +83,8 @@ namespace Braille
         }
 
        
+    
+
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -154,6 +156,148 @@ namespace Braille
             label4.Text = sb.ToString();
         }
 
+
+        /// <summary>
+        /// performs four operations simply
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //I check the validity of the numbers
+            int x = 0, y = 0, res = 0;
+            try
+            {
+                Convert.ToInt32(textBox2.Text.Trim());
+                Convert.ToInt32(textBox4.Text.Trim());
+                x = Convert.ToInt32(textBox2.Text.Trim());
+                y = Convert.ToInt32(textBox4.Text.Trim());
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("You did not enter a number");
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                return;
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Enter fewer numbers");
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                return;
+            }
+            //I check whether the text entered in the operator section is an operator
+            if (!operators.ContainsKey(textBox3.Text.Trim()) || textBox3.Text.Trim().Equals("="))
+            {
+                MessageBox.Show("You did not enter four operators");
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                return;
+            }
+
+            //I am doing the operation of the selected operator
+
+            try
+            {
+                switch (textBox3.Text.Trim())
+                {
+                    case "+":
+                        {
+                            res = x + y;
+                            break;
+                        }
+                    case "-":
+                        {
+                            res = x - y;
+                            break;
+                        }
+                    case "/":
+                        {
+                            res = x / y;
+                            break;
+                        }
+                    case "*":
+                        {
+                            res = x * y;
+                            break;
+                        }
+                }
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Enter a smaller number !!");
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                return;
+            }
+            catch (DivideByZeroException)
+            {
+                MessageBox.Show("I can't divide by zero");
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                return;
+            }
+
+
+
+            label5.Text = x + "  " + textBox3.Text + "  " + y + "  =  " + res;
+
+            StringBuilder sb = new StringBuilder();
+            string temp = null;
+            // I am converting the first number
+            if (x < 0)
+            {
+                sb.Append(Punctuations["-"]);
+                x = Math.Abs(x);
+            }
+
+            temp = x.ToString();
+            sb.Append(numberCode);
+            for (int i = 0; i < temp.Length; i++)
+                sb.Append(numbers[temp[i] + ""]);
+            sb.Append("    ");
+
+            //I added the braille equivalent of the projector
+            sb.Append(operators[textBox3.Text.Trim()] + "    ");
+
+            //I am converting the second number
+            if (y < 0)
+            {
+                sb.Append(Punctuations["-"]);
+                y = Math.Abs(y);
+            }
+            Math.Abs(y);
+            temp = y.ToString();
+            sb.Append(numberCode);
+            for (int i = 0; i < temp.Length; i++)
+                sb.Append(numbers[temp[i] + ""]);
+            sb.Append("    " + operators["="] + "    ");
+
+            //I  converted the result
+            if (res < 0)
+            {
+                sb.Append(Punctuations["-"]);
+                res = Math.Abs(res);
+            }
+
+            temp = res.ToString();
+            sb.Append(numberCode);
+            for (int i = 0; i < temp.Length; i++)
+                sb.Append(numbers[temp[i] + ""]);
+
+            //show case
+            label9.Text = sb.ToString();
+
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+        }
         public Form1()
         {
             InitializeComponent();

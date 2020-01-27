@@ -89,16 +89,70 @@ namespace Braille
             Application.Exit();
         }
 
+
+        /// <summary>
+        /// translates the text in the braille alphabet equivalent
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         #endregion
-
-
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            bool startDigit = false;
+            int nCount = 0;
+            string text = textBox1.Text;
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < text.Length; i++)
+            {
+                try
+                {
+                    if (Char.IsLetter(text[i]))
+                    {
+                        if (Char.IsUpper(text[i]))
+                            sb.Append(upperCode);
+                        sb.Append(alphabet[text[i].ToString().ToLower()]);
+
+                        startDigit = false;
+
+                    }
+                    else if (Char.IsDigit(text[i]))
+                    {
+                        if (!startDigit)
+                            sb.Append(numberCode);
+
+                        sb.Append(numbers[text[i] + ""]);
+
+                        startDigit = true;
+                    }
+                    else if (text[i] == '"')
+                    {
+                        if (nCount % 2 == 1)
+                            sb.Append(leftN);
+                        else sb.Append(rightN);
+                        nCount++;
+                    }
+                    else if (operators.ContainsKey(text[i] + ""))
+                    {
+                        sb.Append(operators[text[i] + ""]);
+                    }
+                    else
+                    {
+                        sb.Append(Punctuations[text[i] + ""]);
+                    }
+                }
+                catch (KeyNotFoundException)
+                {
+                    label4.Text = "";
+                    textBox1.Text = "";
+                    MessageBox.Show("You have entered a character that is outside the alphabet, this is not the place :)");
+                    return;
+                }
+
+
+
+            }
+            label4.Text = sb.ToString();
         }
-
-     
-
 
         public Form1()
         {

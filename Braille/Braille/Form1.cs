@@ -18,7 +18,9 @@ namespace Braille
         private Dictionary<string, string> Punctuations = new Dictionary<string, string>() { { ",", "\u2802" }, { ".", "\u2832" }, { ";", "\u2806" }, { ":", "\u2812" }, { "?", "\u2826" }, { "!", "\u2816" }, { "-", "\u2824" }, { "^", "\u2808" }, { "'", "\u2804" }, { "(", "\u2836" }, { ")", "\u2836" }, { "—", "\u2824\u2824" }, { "<", "\u281c\u281c" } };
         private Dictionary<string, string> operators = new Dictionary<string, string>() { { "*", "\u2830\u2826" }, { "/", "\u2830\u2812" }, { "+", "\u2830\u2822" }, { "-", "\u2830\u2824" }, { "=", "\u2830\u2836" } };                                                                                                                //poetry mark
         private string upperCode = "\u2820", numberCode = "\u283c", leftN = "\u2826", rightN = "\u2834";
-        
+
+      
+
         public Form1()
         {
             InitializeComponent();

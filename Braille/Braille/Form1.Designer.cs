@@ -171,6 +171,7 @@
             this.button1.Text = "Translate";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -211,6 +212,7 @@
             this.FourOperationsToolStripMenuItem.Name = "FourOperationsToolStripMenuItem";
             this.FourOperationsToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.FourOperationsToolStripMenuItem.Text = "Four Operations";
+            this.FourOperationsToolStripMenuItem.Click += new System.EventHandler(this.FourOperationsToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
@@ -231,6 +233,7 @@
             this.ConverterToolStripMenuItem.Name = "ConverterToolStripMenuItem";
             this.ConverterToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.ConverterToolStripMenuItem.Text = "Converter";
+            this.ConverterToolStripMenuItem.Click += new System.EventHandler(this.ConverterToolStripMenuItem_Click);
             // 
             // textBox1
             // 

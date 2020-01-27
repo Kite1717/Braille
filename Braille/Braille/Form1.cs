@@ -19,9 +19,30 @@ namespace Braille
         private Dictionary<string, string> operators = new Dictionary<string, string>() { { "*", "\u2830\u2826" }, { "/", "\u2830\u2812" }, { "+", "\u2830\u2822" }, { "-", "\u2830\u2824" }, { "=", "\u2830\u2836" } };                                                                                                                //poetry mark
         private string upperCode = "\u2820", numberCode = "\u283c", leftN = "\u2826", rightN = "\u2834";
 
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
+
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            pictureBox1.Visible = true;
+            label1.Visible = true;
+            label2.Visible = true;
+            label3.Visible = false;
+            textBox1.Visible = false;
+            button1.Visible = false;
+            label6.Visible = false;
+            textBox2.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            textBox3.Visible = false;
+            textBox4.Visible = false;
+            button2.Visible = false;
+            label5.Visible = false;
+            label9.Visible = false;
+            label4.Visible = false;
         }
 
         public Form1()
